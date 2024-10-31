@@ -5,7 +5,7 @@ module.exports = {
       method: "shell.run",
       params: {
         message: [
-          "git clone https://github.com/etched-ai/open-oasis app",
+          "git clone https://github.com/cocktailpeanut/open-oasis app",
         ]
       }
     },
@@ -30,6 +30,21 @@ module.exports = {
         message: [
           "pip install gradio devicetorch",
           "pip install -r requirements.txt"
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        message: "conda install -y -c conda-forge huggingface_hub"
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        message: [
+          "huggingface-cli download cocktailpeanut/sisao oasis500m.pt --local-dir app",
+          "huggingface-cli download cocktailpeanut/sisao vit-l-20.pt --local-dir app"
         ]
       }
     },
